@@ -14,7 +14,7 @@ COPY src ./src
 RUN cargo install --locked --path .
 
 # Bundle Stage
-FROM debian:bullseye
+FROM arm64v8/debian:bullseye-slim
 
 COPY --from=build /usr/local/cargo/bin/vortex ./vortex
 
